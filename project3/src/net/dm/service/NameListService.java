@@ -47,7 +47,6 @@ public class NameListService {
                     employees[i] = new Architect(id, name, age, salary, equipment, bonus, stock);
                     break;
             }
-
         }
     }
 
