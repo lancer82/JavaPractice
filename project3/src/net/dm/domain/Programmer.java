@@ -13,7 +13,7 @@ public class Programmer extends Employee{
     private Status status = FREE;
     private Equipment equipment;
 
-    public Programmer(int id, String name, int age, double salary, int memberId, Status status, Equipment equipment) {
+    public Programmer(int id, String name, int age, double salary, Equipment equipment) {
         super(id, name, age, salary);
         this.equipment = equipment;
     }

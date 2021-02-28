@@ -4,9 +4,9 @@ import java.util.*;
 /**
  * 
  * @Description 项目中提供了TSUtility.java类，可用来方便地实现键盘访问。
- * @author shkstart  Email:shkstart@126.com
+ * @author
  * @version 
- * @date 2019年2月12日上午12:02:58
+ * @date
  *
  */
 public class TSUtility {
@@ -15,7 +15,7 @@ public class TSUtility {
      * 
      * @Description 该方法读取键盘，如果用户键入’1’-’4’中的任意字符，则方法返回。返回值为用户键入字符。
      * @author shkstart
-     * @date 2019年2月12日上午12:03:30
+     * @date
      * @return
      */
 	public static char readMenuSelection() {
