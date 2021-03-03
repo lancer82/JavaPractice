@@ -26,4 +26,25 @@ public class StudentDao {
             return true;
         }
     }
+
+    public Student[] findAllStudents() {
+        return students;
+    }
+
+    public int getIndex(String id) {
+        int index = -1;
+        for (int i = 0; i < students.length; i++) {
+            Student stu=students[i];
+            if (stu !=null && stu.getId().equals(id)){
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    public void deleteStudentById(String id) {
+        int index = getIndex(id);
+        students[index] = null;
+    }
 }

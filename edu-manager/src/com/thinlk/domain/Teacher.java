@@ -8,7 +8,7 @@ public class Teacher extends Person {
 
     private String subject;
 
-    public Teacher(String id, String name, int age, String birthday, String subject) {
+    public Teacher(String id, String name,String age, String birthday, String subject) {
         super(id, name, age, birthday);
         this.subject = subject;
     }
