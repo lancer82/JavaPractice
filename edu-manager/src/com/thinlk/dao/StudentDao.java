@@ -47,4 +47,9 @@ public class StudentDao {
         int index = getIndex(id);
         students[index] = null;
     }
+
+    public void updateStudentById(String updateId, Student newStu) {
+        int index = getIndex(updateId);
+        students[index] = newStu;
+    }
 }

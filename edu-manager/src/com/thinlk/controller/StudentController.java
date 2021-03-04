@@ -52,29 +52,22 @@ public class StudentController {
         for (int i = 0; i < students.length; i++) {
             Student stu = students[i];
             if (stu != null)
-                System.out.println(stu.getId()+"\t\t"+stu.getName()+"\t\t"+stu.getAge()+"\t\t"+stu.getBirthday());
+                System.out.println(stu.getId() + "\t\t" + stu.getName() + "\t\t" + stu.getAge() + "\t\t" + stu.getBirthday());
             else
                 break;
         }
     }
 
     private void updateStudent() {
+        String updateId = inputSutdentId();
+        Student newStu = inputStudentInfo(updateId);
+        studentService.updateStudentById(updateId,newStu);
+        System.out.println("修改成功");
     }
 
     private void deleteStudent() {
-        String delId;
-        boolean isSuccess;
-        while(true){
-            System.out.println("请输入要删除的学生id:");
-            delId = scanner.next();
-            boolean isExists = studentService.isExist(delId);
-            if(isExists){
-                studentService.deleteStudentById(delId);
-                break;
-            } else {
-                System.out.println("要删除的学生id不存在，请重新输入！");
-            }
-        }
+        String delId = inputSutdentId();
+        studentService.deleteStudentById(delId);
         System.out.println("删除成功");
 
     }
@@ -90,6 +83,34 @@ public class StudentController {
             } else break;
         }
 
+        Student student = inputStudentInfo(id);
+
+        boolean result = studentService.addStudent(student);
+        if (result) {
+            System.out.println("添加成功");
+        } else {
+            System.out.println("添加失败");
+        }
+    }
+
+
+    public String inputSutdentId() {
+        String id;
+        while (true) {
+            System.out.println("请输入要操作的学生id:");
+            id = scanner.next();
+            boolean isExists = studentService.isExist(id);
+            if (!isExists) {
+                System.out.println("学生id不存在，请重新输入！");
+            } else {
+                break;
+            }
+        }
+        return id;
+    }
+
+    public Student inputStudentInfo(String id) {
+
         System.out.println("请输入添加的学生姓名：");
         String name = scanner.next();
         System.out.println("请输入添加的学生年龄：");
@@ -102,12 +123,6 @@ public class StudentController {
         student.setName(name);
         student.setAge(age);
         student.setBirthday(birthday);
-
-        boolean result = studentService.addStudent(student);
-        if (result) {
-            System.out.println("添加成功");
-        } else {
-            System.out.println("添加失败");
-        }
+        return student;
     }
 }
