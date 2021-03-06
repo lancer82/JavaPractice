@@ -6,24 +6,4 @@ package com.thinlk.domain;
  **/
 public class Student extends Person{
 
-    private char gender;
-
-    public Student() {
-
-    }
-
-    public Student(String id, String name,String age ,String birthday,char gender) {
-        super(id,name,age,birthday);
-        this.gender= gender;
-    }
-
-
-
-    public char getGender() {
-        return gender;
-    }
-
-    public void setGender(char gender) {
-        this.gender = gender;
-    }
 }
