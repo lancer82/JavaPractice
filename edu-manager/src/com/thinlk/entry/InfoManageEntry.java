@@ -1,6 +1,7 @@
 package com.thinlk.entry;
 
 import com.thinlk.controller.StudentController;
+import com.thinlk.controller.TeacherController;
 
 import java.util.Scanner;
 
@@ -24,7 +25,10 @@ public class InfoManageEntry {
                     studentController.start();
                     break;
                 case "2":
-                    System.out.println("老师管理");
+                    //System.out.println("老师管理");
+                    TeacherController teacherController = new TeacherController();
+                    teacherController.start();
+
                     break;
                 case "3":
                     System.out.println("感谢您的使用");

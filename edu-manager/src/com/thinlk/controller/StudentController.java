@@ -51,10 +51,9 @@ public class StudentController {
         System.out.println("学号\t\t姓名\t\t年龄\t\t生日");
         for (int i = 0; i < students.length; i++) {
             Student stu = students[i];
-            if (stu != null)
+            if (stu != null){
                 System.out.println(stu.getId() + "\t\t" + stu.getName() + "\t\t" + stu.getAge() + "\t\t" + stu.getBirthday());
-            else
-                break;
+            }
         }
     }
 
