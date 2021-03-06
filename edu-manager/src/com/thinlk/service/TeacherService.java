@@ -6,14 +6,14 @@ import com.thinlk.domain.Teacher;
 public class TeacherService {
 
     private TeacherDao teacherDao = new TeacherDao();
+    private Teacher[] teachers = teacherDao.findAllTeachers();
 
     public boolean addTeacher(Teacher teacher) {
         return teacherDao.addTeacher(teacher);
     }
 
-
     public boolean isExists(String id) {
-        Teacher[] teachers = teacherDao.findAllTeachers();
+
         boolean flag = false;
         for (int i = 0; i < teachers.length; i++) {
             Teacher teacher = teachers[i];
@@ -25,7 +25,6 @@ public class TeacherService {
     }
 
     public Teacher[] findAllTeacher() {
-        Teacher[] teachers =  teacherDao.findAllTeachers();
         boolean flag = false ;
         for (int i = 0; i < teachers.length; i++) {
             Teacher teacher = teachers[i];
