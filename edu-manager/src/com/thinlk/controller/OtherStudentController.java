@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author Thinlk
  * @create 2021-03-02 10:01 PM
  **/
-public class StudentController extends BaseStudentController {
+public class OtherStudentController extends BaseStudentController{
 
     @Override
     public Student inputStudentInfo(String id) {
@@ -21,11 +21,6 @@ public class StudentController extends BaseStudentController {
         System.out.println("请输入添加的学生生日：");
         String birthday = scanner.next();
 
-        Student student = new Student();
-        student.setId(id);
-        student.setName(name);
-        student.setAge(age);
-        student.setBirthday(birthday);
-        return student;
+        return new Student(id, name,age,birthday);
     }
 }

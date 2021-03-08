@@ -1,5 +1,6 @@
 package com.thinlk.entry;
 
+import com.thinlk.controller.OtherStudentController;
 import com.thinlk.controller.StudentController;
 import com.thinlk.controller.TeacherController;
 
@@ -21,7 +22,7 @@ public class InfoManageEntry {
                 case "1":
                     // System.out.println("学生管理");
                     // 开启学生管理系统
-                    StudentController studentController = new StudentController();
+                    OtherStudentController studentController = new OtherStudentController();
                     studentController.start();
                     break;
                 case "2":
