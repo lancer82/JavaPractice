@@ -8,7 +8,7 @@ package com.oop.test;
 public class PersonInit {
 
     {
-        var a = 6;
+        int a = 6;
         if (a > 4)
             System.out.println("PersonInit实例初始化的局部变量，a>4");
         System.out.println("PersonInit第1个定义的实例初始化块");

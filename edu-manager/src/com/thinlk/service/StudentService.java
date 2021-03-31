@@ -1,7 +1,12 @@
 package com.thinlk.service;
 
+import com.thinlk.dao.BaseStudentDao;
+import com.thinlk.dao.OtherStudentDao;
 import com.thinlk.dao.StudentDao;
 import com.thinlk.domain.Student;
+import com.thinlk.factory.StudentDatafactory;
+
+import javax.print.attribute.standard.MediaSize;
 
 /**
  * @author Thinlk
@@ -9,14 +14,16 @@ import com.thinlk.domain.Student;
  **/
 public class StudentService {
 
-    private StudentDao studentDao = new StudentDao();
-    private Student[] students = studentDao.findAllStudents();
+    //private OtherStudentDao studentDao = new OtherStudentDao();
+
+    private BaseStudentDao studentDao = StudentDatafactory.getStudentDao();
 
     public boolean addStudent(Student student) {
         return studentDao.addStudent(student);
     }
 
     public boolean isExist(String id) {
+        Student[] students = studentDao.findAllStudents();
         boolean flag = false;
         for (int i = 0; i < students.length; i++) {
             Student stu = students[i];
@@ -29,6 +36,7 @@ public class StudentService {
     }
 
     public Student[] findAllStudents() {
+        Student[] students = studentDao.findAllStudents();
         boolean flag = false;
         for (int i = 0; i < students.length; i++) {
             Student stu = students[i];

@@ -6,9 +6,16 @@ import com.thinlk.domain.Student;
  * @author Thinlk
  * @create 2021-03-02 10:25 PM
  **/
-public class StudentDao {
+public class StudentDao implements BaseStudentDao{
 
-    private Student[] students = new Student[5];
+    private static Student[] students = new Student[5];
+
+    static {
+        Student stu1 = new Student("001","张三","23","1999-11-11");
+        Student stu2 = new Student("002","李四","24","1998-11-11");
+        students[0] = stu1;
+        students[1] = stu2;
+    }
 
     public boolean addStudent(Student student) {
         int index = -1;
