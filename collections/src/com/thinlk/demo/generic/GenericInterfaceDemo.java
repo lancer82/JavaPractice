@@ -11,10 +11,6 @@ public class GenericInterfaceDemo {
         generic2.show(19);
     }
 
-
-
-
-
 }
 
 interface Generictity<T> {
