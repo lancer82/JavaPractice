@@ -2,7 +2,7 @@ package com.thinlk.demo.map;
 
 import java.util.Objects;
 
-public class Student {
+public class Student /*implements Comparable<Student>*/{
     private String name;
     private int age;
 
@@ -51,4 +51,11 @@ public class Student {
     public int hashCode() {
         return Objects.hash(name, age);
     }
+
+//    @Override
+//    public int compareTo(Student o) {
+//        int result = this.age - o.age;
+//        result = result == 0 ? this.name.compareTo(o.name):result;
+//        return result;
+//    }
 }
